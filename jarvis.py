@@ -48,8 +48,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smntp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("devkp786@gmail.com","kris@2002")
-    server.sendmail("devkp786@gmail.com", to , content)
+    server.login("test@gmail.com","test@password")
+    server.sendmail("receiverEmail@gmail.com", to , content)
     server.close()
 
 if __name__ == "__main__":
@@ -84,11 +84,11 @@ if __name__ == "__main__":
             speak('yes sir')
             break
 
-        elif 'email to harry' in query:
+        elif 'email to senderName' in query:
             try:
                 speak("WHAT SHOULD I SAY?")
                 content = takecommand()
-                to = "devkp786@gmail.com"
+                to = "receiverEmal@gmail.com"
                 sendEmail(to, content)
                 speak('EMAIL SENT')
             except:
